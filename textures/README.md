@@ -5,8 +5,28 @@ The zip contains the following textures:
 ```
 bitmaps
     skycolors
-        sky_colors_*            -- Vivid Sky
-        sun_glow_*              -- Vivid Sky
+        sky_colors_
+            clean       -- Cloud Art 3.3
+            foggy       -- Vivid sky
+            hazy        -- Cloud Art 3.3
+            hialt       -- Cloud Art 3.3
+            mount       -- Cloud Art 3.3
+            ocast       -- Cloud Art 3.3
+            orbit       -- Vivid sky
+            snowy       -- Vivid sky
+            socked      -- Vivid sky
+            stratus     -- Cloud Art 3.3
+        sun_glow_
+            clean       -- Cloud Art 3.3
+            foggy       -- Vivid sky
+            hazy        -- Vivid sky
+            hialt       -- Cloud Art 3.3
+            mount       -- Cloud Art 3.3
+            ocast       -- Vivid sky
+            orbit       -- Vivid sky
+            snowy       -- Vivid sky
+            socked      -- Vivid sky
+            stratus     -- Vivid sky
     world
         clouds
             cloud_puff0,1,2     -- Vivid Sky
