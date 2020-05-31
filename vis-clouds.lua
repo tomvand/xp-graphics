@@ -16,7 +16,7 @@ function vis_clouds()
       set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
       set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
       set( "sim/private/controls/clouds/light_curve_power", 0.08)
-      set( "sim/private/controls/clouds/plot_radius", 1.45) -- Slightly bigger
+      set( "sim/private/controls/clouds/plot_radius", 1.6) -- Slightly bigger
       set( "sim/private/controls/skyc/fog_start_lo_alt", 0.5) -- Cloud drawing distance from below
       -- Other settings --
       -- set( "sim/private/controls/clouds/soft_occlude",  0.0) -- not sure
