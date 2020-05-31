@@ -4,6 +4,8 @@ The zip contains the following textures:
 
 ```
 bitmaps
+    runways
+        *               -- Airport Environment HD
     skycolors
         sky_colors_
             clean       -- Cloud Art 3.3
