@@ -111,6 +111,6 @@ function adjust_minfog_by_RH()
     if relative_humidity > 100 then
         relative_humidity = 100
     end
-    xvis_minFog_value = (relative_humidity / 100) * (relative_humidity / 100) * 1.0  -- room for tweaking
+    xvis_minFog_value = (relative_humidity / 100) * 1.0  -- room for tweaking
 end
 do_often("adjust_minfog_by_RH()")
