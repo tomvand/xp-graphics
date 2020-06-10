@@ -19,32 +19,32 @@ set( "sim/private/controls/terrain/fog_clip_scale",    0.0 )
 
 --clouds lighting
 
--- set( "sim/private/controls/clouds/ambient_gain",       1.05 )
--- set( "sim/private/controls/clouds/diffuse_gain",       1.39 )
--- set( "sim/private/controls/clouds/spec_gain",        2.0 )
--- set( "sim/private/controls/clouds/light_curve_power",  1.2)
--- set( "sim/private/controls/clouds/light_curve_ratio",  1.0)
+set( "sim/private/controls/clouds/ambient_gain",       1.05 )
+set( "sim/private/controls/clouds/diffuse_gain",       1.39 )
+set( "sim/private/controls/clouds/spec_gain",        2.0 )
+set( "sim/private/controls/clouds/light_curve_power",  1.2)
+set( "sim/private/controls/clouds/light_curve_ratio",  1.0)
 
 
 
 --clouds draw settings
 
--- set( "sim/private/controls/clouds/first_res_3d", 3)
--- set( "sim/private/controls/clouds/last_res_3d", 5)
--- set( "sim/private/controls/clouds/limit_far",  1.0)
--- set( "sim/private/controls/clouds/soft_occlude",  1.0)
+set( "sim/private/controls/clouds/first_res_3d", 3)
+set( "sim/private/controls/clouds/last_res_3d", 5)
+set( "sim/private/controls/clouds/limit_far",  1.0)
+set( "sim/private/controls/clouds/soft_occlude",  1.0)
 
--- set( "sim/private/controls/clouds/plot_radius",  1.2)
+set( "sim/private/controls/clouds/plot_radius",  1.2)
 
 
 --clouds density
 
--- set( "sim/private/controls/cloud/fade_far_end",       1.925 )
--- set( "sim/private/controls/cloud/fade_far_start",     0.100 )
--- set( "sim/private/controls/cloud/fade_near_end",       0.00 )
--- set( "sim/private/controls/cloud/fade_near_start",   -1.000 )
+set( "sim/private/controls/cloud/fade_far_end",       1.925 )
+set( "sim/private/controls/cloud/fade_far_start",     0.100 )
+set( "sim/private/controls/cloud/fade_near_end",       0.00 )
+set( "sim/private/controls/cloud/fade_near_start",   -1.000 )
 
--- set( "sim/private/controls/clouds/overdraw_control", 0.9)
+set( "sim/private/controls/clouds/overdraw_control", 0.9)
 
 
 
@@ -55,8 +55,8 @@ set( "sim/private/controls/terrain/fog_clip_scale",    0.0 )
 -- set( "sim/private/controls/cloud/offscreen_tight", 1.0)
 -- set( "sim/private/controls/cloud/offscreen_tweak", 1.0)
 
--- set( "sim/private/controls/clouds/image_size_x", 4096.0)
--- set( "sim/private/controls/clouds/image_size_y", 4096.0)
+set( "sim/private/controls/clouds/image_size_x", 4096.0)
+set( "sim/private/controls/clouds/image_size_y", 4096.0)
 
 
 
