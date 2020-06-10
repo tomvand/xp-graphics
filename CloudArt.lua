@@ -1,11 +1,22 @@
+-- Custom Cloud Art settings
+set( "sim/private/controls/clouds/ambient_gain", 1.17) -- grayscale ambient lighting
+set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
+set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
+set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
+set( "sim/private/controls/clouds/light_curve_power", 0.08)
+set( "sim/private/controls/clouds/plot_radius", 1.6) -- Slightly bigger
+set( "sim/private/controls/skyc/fog_start_lo_alt", 0.5) -- Cloud drawing distance from below
+
+
+-- Original Cloud Art settings
 set( "sim/private/controls/clouds/first_res_3d", 3)
 set( "sim/private/controls/clouds/last_res_3d", 5)
-set( "sim/private/controls/clouds/plot_radius", 1.4)
+-- set( "sim/private/controls/clouds/plot_radius", 1.4)
 set( "sim/private/controls/clouds/overdraw_control", 0.1)
-set( "sim/private/controls/clouds/ambient_gain", 1.24)
-set( "sim/private/controls/clouds/diffuse_gain", 0)
-set( "sim/private/controls/clouds/light_curve_ratio", 100)
-set( "sim/private/controls/clouds/light_curve_power", 100)
+-- set( "sim/private/controls/clouds/ambient_gain", 1.24)
+-- set( "sim/private/controls/clouds/diffuse_gain", 0)
+-- set( "sim/private/controls/clouds/light_curve_ratio", 100)
+-- set( "sim/private/controls/clouds/light_curve_power", 100)
 -- set( "sim/private/controls/clouds/shad_radius" , 1.0)
 -- set( "sim/private/controls/clouds/shad_alpha_dry" , 0.5)
 -- set( "sim/private/controls/clouds/shad_alpha_wet", 0)
