@@ -1,3 +1,40 @@
+-- Custom cloud settings
+set( "sim/private/controls/clouds/ambient_gain", 1.17) -- grayscale ambient lighting
+set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
+set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
+set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
+set( "sim/private/controls/clouds/light_curve_power", 0.08)
+-- set( "sim/private/controls/clouds/plot_radius", 1.4) -- Slightly bigger
+set( "sim/private/controls/skyc/fog_start_lo_alt", 0.5) -- Cloud drawing distance from below
+
+-- From cloud art
+set( "sim/private/controls/clouds/first_res_3d", 3)
+set( "sim/private/controls/clouds/last_res_3d", 5)
+set( "sim/private/controls/clouds/overdraw_control", 0.1)
+-- set( "sim/private/controls/clouds/shad_radius" , 1.0)
+-- set( "sim/private/controls/clouds/shad_alpha_dry" , 0.5)
+-- set( "sim/private/controls/clouds/shad_alpha_wet", 0)
+set( "sim/private/controls/clouds/count_ratio/0",0.5)
+set( "sim/private/controls/clouds/count_ratio/1",0.5)
+set( "sim/private/controls/clouds/count_ratio/2",0.5)
+set( "sim/private/controls/clouds/count_ratio/3",0.5)
+set( "sim/private/controls/clouds/count_ratio/4",0.5)
+set( "sim/private/controls/clouds/check_z_hdr", 0.00)
+-- set( "sim/private/controls/skyc/shadow_level_clean", 1.000000)
+-- set( "sim/private/controls/skyc/shadow_level_ocast", 1.000000)
+-- set( "sim/private/controls/clouds/cloud_shadow_lighten_ratio",  1.00)
+-- set( "sim/private/controls/clouds/shad_radius", 0.6)
+-- set( "sim/private/controls/shadow/adhoc/extra_far",  1.0 )
+-- set( "sim/private/controls/shadow/bias_const",  0.0 )
+-- set( "sim/private/controls/shadow/bias_slope",  1.0 )
+-- set( "sim/private/controls/shadow/extra_near",  1.0 )
+-- set( "sim/private/controls/shadow/overlap_ratio",  0.001000 )
+
+
+
+
+
+
 -- T r u e H a z e --
 
 --atmosphere parameters
@@ -19,32 +56,32 @@ set( "sim/private/controls/terrain/fog_clip_scale",    0.0 )
 
 --clouds lighting
 
-set( "sim/private/controls/clouds/ambient_gain",       1.05 )
-set( "sim/private/controls/clouds/diffuse_gain",       1.39 )
-set( "sim/private/controls/clouds/spec_gain",        2.0 )
-set( "sim/private/controls/clouds/light_curve_power",  1.2)
-set( "sim/private/controls/clouds/light_curve_ratio",  1.0)
+-- set( "sim/private/controls/clouds/ambient_gain",       1.05 )
+-- set( "sim/private/controls/clouds/diffuse_gain",       1.39 )
+-- set( "sim/private/controls/clouds/spec_gain",        2.0 )
+-- set( "sim/private/controls/clouds/light_curve_power",  1.2)
+-- set( "sim/private/controls/clouds/light_curve_ratio",  1.0)
 
 
 
 --clouds draw settings
 
-set( "sim/private/controls/clouds/first_res_3d", 3)
-set( "sim/private/controls/clouds/last_res_3d", 5)
-set( "sim/private/controls/clouds/limit_far",  1.0)
-set( "sim/private/controls/clouds/soft_occlude",  1.0)
+-- set( "sim/private/controls/clouds/first_res_3d", 3)
+-- set( "sim/private/controls/clouds/last_res_3d", 5)
+-- set( "sim/private/controls/clouds/limit_far",  1.0)
+-- set( "sim/private/controls/clouds/soft_occlude",  1.0)
 
 set( "sim/private/controls/clouds/plot_radius",  1.2)
 
 
 --clouds density
 
-set( "sim/private/controls/cloud/fade_far_end",       1.925 )
-set( "sim/private/controls/cloud/fade_far_start",     0.100 )
-set( "sim/private/controls/cloud/fade_near_end",       0.00 )
-set( "sim/private/controls/cloud/fade_near_start",   -1.000 )
+-- set( "sim/private/controls/cloud/fade_far_end",       1.925 )
+-- set( "sim/private/controls/cloud/fade_far_start",     0.100 )
+-- set( "sim/private/controls/cloud/fade_near_end",       0.00 )
+-- set( "sim/private/controls/cloud/fade_near_start",   -1.000 )
 
-set( "sim/private/controls/clouds/overdraw_control", 0.9)
+-- set( "sim/private/controls/clouds/overdraw_control", 0.9)
 
 
 
