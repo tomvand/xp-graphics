@@ -3,15 +3,18 @@ local do_once = false
 
 function vis_atmo()
     if os.clock() > start_time and do_once == false then
-        -- Tuning based on Vivid Sky textures and sky colors
-        -- combined with Cloud Art 3.2 clouds
+        -- Tuning based on ExtremeReal skycolors and default clouds
 
         -- OWN ADDITIONS
         -- set("sim/private/controls/skyc/tone_ratio_clean", 0.50) -- Bit brighter on sunny days
         set("sim/private/controls/skyc/tone_ratio_strat", -1.0)
         set("sim/private/controls/skyc/tone_ratio_ocast", -2.0) -- Much darker during overcast
         xvis_highAltFogMult = 0.25  -- Reduce X-Visibility high-altitude fog
-        -- Leave rest at default values or as set by vivid sky
+        -- cloud shadows
+        set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.80) -- shadow intensity. Overall multiplier with cloud shadow.
+        set("sim/private/controls/clouds/limit_far",  0.1) -- physical size of cloud shadow texture (0.4: good. Smaller is sharper outlines but artifacts further away)
+        
+
 
 
 
@@ -47,11 +50,11 @@ function vis_atmo()
 
         -- Cloud Shadows
         set("sim/private/controls/clouds/shad_radius", 0.6) -- increased volume
-        set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.94) -- darker shadow, max 1.0
+        -- set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.94) -- darker shadow, max 1.0
         set("sim/private/controls/clouds/shad_alpha_dry", 0.6) -- darker shadow
         set("sim/private/controls/clouds/shad_alpha_wet", 1.0) -- darker shadow
         set("sim/private/controls/clouds/limit_far",  0.4) -- reduce shadow flicker, blockiness and increase detail 
-        set("sim/private/controls/clouds/shadow_size", 2048.0)  -- reduce shadow flicker, possibly not used in 11.35
+        -- set("sim/private/controls/clouds/shadow_size", 2048.0)  -- reduce shadow flicker, possibly not used in 11.35
 
         do_once = true
     end

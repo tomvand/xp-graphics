@@ -6,24 +6,25 @@ function vis_clouds()
       --------------------------------------------------------------------
       -- CLOUDS
       --------------------------------------------------------------------
-      -- Tuning based on Cloud Art 3.2 textures and sky colors
+      -- Tuning based on ExtremeReal skycolors and default clouds
 
       -- OWN SETTINGS
       -- Cloud color --
       -- Appearance of diffuse/spec gain depends on light_curve
-      set( "sim/private/controls/clouds/ambient_gain", 1.3) -- grayscale ambient lighting
-      set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
-      set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
-      set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
-      set( "sim/private/controls/clouds/light_curve_power", 0.08)
-      set( "sim/private/controls/clouds/plot_radius", 1.45) -- Slightly bigger
+      -- set( "sim/private/controls/clouds/ambient_gain", 1.3) -- grayscale ambient lighting
+      -- set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
+      -- set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
+      -- set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
+      -- set( "sim/private/controls/clouds/light_curve_power", 0.08)
+      -- set( "sim/private/controls/clouds/plot_radius", 1.45) -- Slightly bigger
       set( "sim/private/controls/skyc/fog_start_lo_alt", 0.5) -- Cloud drawing distance from below
       -- Other settings --
+      set( "sim/private/controls/clouds/first_res_3d", 1)
       -- set( "sim/private/controls/clouds/soft_occlude",  0.0) -- not sure
-      -- set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 1.0) -- shadow intensity. Overall multiplier with cloud shadow.
+      -- set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.80) -- shadow intensity. Overall multiplier with cloud shadow.
       -- set("sim/private/controls/clouds/shad_alpha_dry", 0.1) -- subtle shadow in dry weather
       -- set("sim/private/controls/clouds/shad_alpha_wet", 5.0) -- really dark shadow in wet weather. Alpha is clipped, so >1 does not darken but increases shadow size/leaves less gaps.
-      -- set("sim/private/controls/clouds/limit_far",  0.3) -- physical size of cloud shadow texture (0.4: good. Smaller is sharper outlines but artifacts further away)
+      -- set("sim/private/controls/clouds/limit_far",  0.1) -- physical size of cloud shadow texture (0.4: good. Smaller is sharper outlines but artifacts further away)
       -- set( "sim/private/controls/skyc/white_out_in_clouds", 1) -- Does not work anymore? Might be X-Visibility... -- personal preference
       -- set("sim/private/controls/clouds/shadow_size", 2048.0) -- not available anymore, crashes script
 
@@ -54,11 +55,11 @@ function vis_clouds()
       -- set("sim/private/controls/skyc/tone_ratio_hialt", 1.25) 
       -- set("sim/private/controls/skyc/tone_ratio_mount", 1.1) 
       -- -- Cloud Shadows
-      set("sim/private/controls/clouds/shad_radius", 0.6) -- increased volume
-      set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.94) -- darker shadow, max 1.0
-      set("sim/private/controls/clouds/shad_alpha_dry", 0.6) -- darker shadow
-      set("sim/private/controls/clouds/shad_alpha_wet", 1.0) -- darker shadow
-      set("sim/private/controls/clouds/limit_far",  0.4) -- reduce shadow flicker, blockiness and increase detail 
+      -- set("sim/private/controls/clouds/shad_radius", 0.6) -- increased volume
+      -- set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.94) -- darker shadow, max 1.0
+      -- set("sim/private/controls/clouds/shad_alpha_dry", 0.6) -- darker shadow
+      -- set("sim/private/controls/clouds/shad_alpha_wet", 1.0) -- darker shadow
+      -- set("sim/private/controls/clouds/limit_far",  0.4) -- reduce shadow flicker, blockiness and increase detail 
       -- set("sim/private/controls/clouds/shadow_size", 2048.0)  -- reduce shadow flicker, possibly not used in 11.35, removed in Vulkan?
   
   
@@ -114,8 +115,8 @@ function vis_clouds()
       -- CloudArt.lua
       -- https://forums.x-plane.org/index.php?/files/file/40952-cloud-art/
       -- Version 3.2
-      set( "sim/private/controls/clouds/first_res_3d", 3)
-      set( "sim/private/controls/clouds/last_res_3d", 5)
+      -- set( "sim/private/controls/clouds/first_res_3d", 3)
+      -- set( "sim/private/controls/clouds/last_res_3d", 5)
       -- set( "sim/private/controls/clouds/plot_radius", 1.4)
       set( "sim/private/controls/clouds/overdraw_control", 0.1)
       -- set( "sim/private/controls/clouds/ambient_gain", 1.24)
@@ -126,12 +127,12 @@ function vis_clouds()
       -- set( "sim/private/controls/clouds/shad_alpha_dry" , 0.5)
       -- set( "sim/private/controls/clouds/shad_alpha_wet", 0)
       -- set( "sim/private/controls/clouds/shadow_size", 2048)
-      set( "sim/private/controls/clouds/count_ratio/0",0.5)
-      set( "sim/private/controls/clouds/count_ratio/1",0.5)
-      set( "sim/private/controls/clouds/count_ratio/2",0.5)
-      set( "sim/private/controls/clouds/count_ratio/3",0.5)
-      set( "sim/private/controls/clouds/count_ratio/4",0.5)
-      set( "sim/private/controls/clouds/check_z_hdr", 0.00)
+      -- set( "sim/private/controls/clouds/count_ratio/0",0.5)
+      -- set( "sim/private/controls/clouds/count_ratio/1",0.5)
+      -- set( "sim/private/controls/clouds/count_ratio/2",0.5)
+      -- set( "sim/private/controls/clouds/count_ratio/3",0.5)
+      -- set( "sim/private/controls/clouds/count_ratio/4",0.5)
+      -- set( "sim/private/controls/clouds/check_z_hdr", 0.00)
       -- set( "sim/private/controls/dome/sun_gain_1_hdr", 0.7)
       -- set( "sim/private/controls/skyc/mie_scattering_ocast", 10.000000)
       -- set( "sim/private/controls/skyc/shadow_level_clean", 1.000000)
