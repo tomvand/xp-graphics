@@ -19,7 +19,7 @@ function vis_clouds()
       -- set( "sim/private/controls/clouds/plot_radius", 1.45) -- Slightly bigger
       set( "sim/private/controls/skyc/fog_start_lo_alt", 0.5) -- Cloud drawing distance from below
       -- Other settings --
-      set( "sim/private/controls/clouds/first_res_3d", 1)
+      set( "sim/private/controls/clouds/first_res_3d", 3) -- 3: see "Puffy Clouds"
       -- set( "sim/private/controls/clouds/soft_occlude",  0.0) -- not sure
       -- set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.80) -- shadow intensity. Overall multiplier with cloud shadow.
       -- set("sim/private/controls/clouds/shad_alpha_dry", 0.1) -- subtle shadow in dry weather
