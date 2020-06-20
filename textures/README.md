@@ -6,7 +6,9 @@ The zip contains the following textures:
 bitmaps
     runways
         *               -- Airport Environment HD
-    skycolors*          -- ExtremeReal textures 3.5
+    skycolors
+        *                           -- Vivid sky
+        clean, ocast, stratus       -- ExtremeReal textures 3.5
     world
         clouds          -- Vivid sky
         lites
