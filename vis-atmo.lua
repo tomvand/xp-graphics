@@ -9,7 +9,7 @@ function vis_atmo()
         -- set("sim/private/controls/skyc/tone_ratio_clean", 0.50) -- Bit brighter on sunny days
         set("sim/private/controls/skyc/tone_ratio_strat", -1.0)
         set("sim/private/controls/skyc/tone_ratio_ocast", -2.0) -- Much darker during overcast
-        xvis_highAltFogMult = 0.25  -- Reduce X-Visibility high-altitude fog
+        xvis_highAltFogMult = 0.50  -- Reduce X-Visibility high-altitude fog
         -- cloud shadows
         set("sim/private/controls/clouds/cloud_shadow_lighten_ratio", 0.85) -- shadow intensity. Overall multiplier with cloud shadow.
         set("sim/private/controls/clouds/limit_far",  0.2) -- physical size of cloud shadow texture (0.4: good. Smaller is sharper outlines and less flickering but artifacts further away)
