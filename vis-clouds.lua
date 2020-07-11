@@ -11,7 +11,7 @@ function vis_clouds()
       -- OWN SETTINGS
       -- Cloud color --
       -- Appearance of diffuse/spec gain depends on light_curve
-      -- set( "sim/private/controls/clouds/ambient_gain", 1.3) -- grayscale ambient lighting
+      set( "sim/private/controls/clouds/ambient_gain", 1.0) -- grayscale ambient lighting
       -- set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
       -- set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
       -- set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
@@ -27,6 +27,10 @@ function vis_clouds()
       -- set("sim/private/controls/clouds/limit_far",  0.1) -- physical size of cloud shadow texture (0.4: good. Smaller is sharper outlines but artifacts further away)
       -- set( "sim/private/controls/skyc/white_out_in_clouds", 1) -- Does not work anymore? Might be X-Visibility... -- personal preference
       -- set("sim/private/controls/clouds/shadow_size", 2048.0) -- not available anymore, crashes script
+      -- TEST against flicker --
+      -- set( "sim/private/controls/clouds/check_z_hdr", 0.00)
+      -- set( "sim/private/controls/clouds/last_res_3d", 5)
+      set( "sim/private/controls/clouds/overdraw_control", 0.6) -- was 0.1, confirmed to work somewhat
 
 
   
@@ -118,7 +122,7 @@ function vis_clouds()
       -- set( "sim/private/controls/clouds/first_res_3d", 3)
       -- set( "sim/private/controls/clouds/last_res_3d", 5)
       -- set( "sim/private/controls/clouds/plot_radius", 1.4)
-      set( "sim/private/controls/clouds/overdraw_control", 0.1)
+      -- set( "sim/private/controls/clouds/overdraw_control", 0.1)
       -- set( "sim/private/controls/clouds/ambient_gain", 1.24)
       -- set( "sim/private/controls/clouds/diffuse_gain", 0)
       -- set( "sim/private/controls/clouds/light_curve_ratio", 100)
