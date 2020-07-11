@@ -11,8 +11,9 @@ function vis_clouds()
       -- OWN SETTINGS
       -- Cloud color --
       -- Appearance of diffuse/spec gain depends on light_curve
-      set( "sim/private/controls/clouds/ambient_gain", 1.0) -- grayscale ambient lighting
-      -- set( "sim/private/controls/clouds/diffuse_gain", 0.6) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
+      -- Lower diffuse gain (compensated with ambient_gain) reduces cloud flicker somewhat...
+      set( "sim/private/controls/clouds/ambient_gain", 1.2) -- grayscale ambient lighting
+      set( "sim/private/controls/clouds/diffuse_gain", 0.7) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
       -- set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
       -- set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
       -- set( "sim/private/controls/clouds/light_curve_power", 0.08)
