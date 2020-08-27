@@ -6,15 +6,15 @@ function vis_clouds()
       --------------------------------------------------------------------
       -- CLOUDS
       --------------------------------------------------------------------
-      -- Tuning based on ExtremeReal skycolors and default clouds
+      -- Tuning based on ExtremeReal skycolors and Cloud Art 3.3 clouds
 
       -- OWN SETTINGS
       -- Cloud color --
       -- Appearance of diffuse/spec gain depends on light_curve
       -- Lower diffuse gain (compensated with ambient_gain) reduces cloud flicker somewhat...
       set( "sim/private/controls/clouds/ambient_gain", 1.15) -- grayscale ambient lighting
-      set( "sim/private/controls/clouds/diffuse_gain", 0.7) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
-      -- set("sim/private/controls/clouds/spec_gain", 1.5) -- Sun reflection and power through clouds
+      -- set( "sim/private/controls/clouds/diffuse_gain", 0.7) -- Sky/sun color. Very pinkish during sunset. Also darker on bottom/far side of clouds.
+      set("sim/private/controls/clouds/spec_gain", 6.0) -- Sun reflection and power through clouds
       -- set( "sim/private/controls/clouds/light_curve_ratio", 20) -- Controls darker cloud bottom. Multiplied with curve_power in some way.
       -- set( "sim/private/controls/clouds/light_curve_power", 0.08)
       -- set( "sim/private/controls/clouds/plot_radius", 1.45) -- Slightly bigger
@@ -31,7 +31,8 @@ function vis_clouds()
       -- TEST against flicker --
       -- set( "sim/private/controls/clouds/check_z_hdr", 0.00)
       -- set( "sim/private/controls/clouds/last_res_3d", 5)
-      set( "sim/private/controls/clouds/overdraw_control", 0.6) -- was 0.1, confirmed to work somewhat
+      set( "sim/private/controls/clouds/overdraw_control", 0.5) -- was 0.1, confirmed to work somewhat
+      set( "sim/private/controls/clouds/plot_radius", 2.0)
 
 
   
