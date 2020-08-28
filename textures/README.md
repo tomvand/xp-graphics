@@ -10,7 +10,7 @@ bitmaps
         *                           -- Vivid sky
         clean, ocast, stratus       -- ExtremeReal textures 3.5
     world
-        clouds          -- Vivid sky
+        clouds          -- Default + Cloud Art 3.3
         lites
             lights.txt  -- TKLightMod2019 (I think...)
 ```
