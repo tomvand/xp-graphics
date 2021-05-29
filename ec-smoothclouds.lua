@@ -131,13 +131,12 @@ function ecsc_on_frame()
   end
   -- Write updated values
   for i=1,6 do
+    local cov = ecsc.layers[0].current  -- By default, sync cloud settings to layer 0 for smoother weather updates
     if cov_current[i] ~= nil then
-      set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/coverage", interp(ecsc.preset.coverage, cov_current[i]))
-      set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/density", interp(ecsc.preset.density, cov_current[i]))
-    else
-      set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/coverage", ecsc.preset.coverage[i])
-      set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/density", ecsc.preset.density[i])
+      cov = cov_current[i]
     end
+    set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/coverage", interp(ecsc.preset.coverage, cov))
+    set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/density", interp(ecsc.preset.density, cov))
   end
 end
 do_every_frame("ecsc_on_frame()")
