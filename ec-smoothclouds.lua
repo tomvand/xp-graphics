@@ -1,6 +1,6 @@
 local ecsc = {
   START_TIME = os.clock(),
-  TRANSITION_TIME = 10.0,  -- Transition time in seconds between successive coverage values (0-6)
+  TRANSITION_TIME = 150.0,  -- Transition time in seconds between successive coverage values (0-6)
   COVERAGE_NAMES = {
     [0] = "clear",
     [1] = "cirrus",
