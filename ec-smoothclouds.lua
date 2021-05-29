@@ -1,6 +1,6 @@
 local ecsc = {
   START_TIME = os.clock(),
-  TRANSITION_TIME = 150.0,  -- Transition time in seconds between successive coverage values (0-6)
+  TRANSITION_TIME = 10.0,  -- Transition time in seconds between successive coverage values (0-6)
   COVERAGE_NAMES = {
     [0] = "clear",
     [1] = "cirrus",
@@ -23,9 +23,15 @@ local function ecsc_find_datarefs()
       [0] = XPLMFindDataRef("sim/weather/cloud_coverage[0]"),
       [1] = XPLMFindDataRef("sim/weather/cloud_coverage[1]"),
       [2] = XPLMFindDataRef("sim/weather/cloud_coverage[2]"),
-    }
+    },
+    base_noise_ratios = {},
+    detail_noise_ratios = {},
   }
-  if dr.cloud_coverage[0] ~= nil and dr.cloud_coverage[1] ~= nil and dr.cloud_coverage[2] ~= nil then
+  for i=1,6 do
+    dr.base_noise_ratios[i] = XPLMFindDataRef("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/base_noise_ratios")
+    dr.detail_noise_ratios[i] = XPLMFindDataRef("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/detail_noise_ratios")
+  end
+  if dr.cloud_coverage[0] ~= nil and dr.base_noise_ratios[1] ~= nil then
     ecsc.datarefs = dr
   end
 end
@@ -41,8 +47,8 @@ local function ecsc_get_preset()
   for i=1,6 do
     ecsc.preset.coverage[i] = get("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/coverage")
     ecsc.preset.density[i] = get("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/density")
-    ecsc.preset.base_noise_ratios[i] = XPLMGetDatavf(XPLMFindDataRef("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/base_noise_ratios"), 0, 3)
-    ecsc.preset.detail_noise_ratios[i] = XPLMGetDatavf(XPLMFindDataRef("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/detail_noise_ratios"), 0, 3)
+    ecsc.preset.base_noise_ratios[i] = XPLMGetDatavf(ecsc.datarefs.base_noise_ratios[i], 0, 3)
+    ecsc.preset.detail_noise_ratios[i] = XPLMGetDatavf(ecsc.datarefs.detail_noise_ratios[i], 0, 3)
   end
   ecsc.preset.coverage[0] = 0.0
   ecsc.preset.density[0] = 0.0
@@ -72,6 +78,17 @@ local function interp(vector, index)
   local floor = math.floor(index)
   local frac = index - floor
   return vector[floor] + frac * (vector[floor + 1] - vector[floor])
+end
+
+
+local function interp3(vector3, index)
+  local floor = math.floor(index)
+  local frac = index - floor
+  return {
+    [0] = vector3[floor][0] + frac * (vector3[floor + 1][0] - vector3[floor][0]),
+    [1] = vector3[floor][1] + frac * (vector3[floor + 1][1] - vector3[floor][1]),
+    [2] = vector3[floor][2] + frac * (vector3[floor + 1][2] - vector3[floor][2]),
+  }
 end
 
 
@@ -137,6 +154,8 @@ function ecsc_on_frame()
     end
     set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/coverage", interp(ecsc.preset.coverage, cov))
     set("enhanced_cloudscapes/" .. ecsc.COVERAGE_NAMES[i] .. "/density", interp(ecsc.preset.density, cov))
+    XPLMSetDatavf(ecsc.datarefs.base_noise_ratios[i], interp3(ecsc.preset.base_noise_ratios, cov), 0, 3)
+    XPLMSetDatavf(ecsc.datarefs.detail_noise_ratios[i], interp3(ecsc.preset.detail_noise_ratios, cov), 0, 3)
   end
 end
 do_every_frame("ecsc_on_frame()")
