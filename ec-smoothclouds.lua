@@ -1,6 +1,6 @@
 local ecsc = {
   START_TIME = os.clock(),
-  TRANSITION_TIME = 150.0,  -- Transition time in seconds between successive coverage values (0-6)
+  TRANSITION_TIME = 300.0,  -- Transition time in seconds between successive coverage values (0-6)
   COVERAGE_NAMES = {
     [0] = "clear",
     [1] = "cirrus",
@@ -77,17 +77,35 @@ end
 local function interp(vector, index)
   local floor = math.floor(index)
   local frac = index - floor
-  return vector[floor] + frac * (vector[floor + 1] - vector[floor])
+  
+  local a = floor
+  local b = floor + 1
+  if b == 2 then  -- transition from clear to few, skipping cirrus!
+    a = 0
+  end
+  if b > 6 then  -- bounds checking for possible rounding errors
+    b = 6
+  end
+  return vector[a] + frac * (vector[b] - vector[a])
 end
 
 
 local function interp3(vector3, index)
   local floor = math.floor(index)
   local frac = index - floor
+
+  local a = floor
+  local b = floor + 1
+  if b == 2 then  -- transition from clear to few, skipping cirrus!
+    a = 0
+  end
+  if b > 6 then  -- bounds checking for possible rounding errors
+    b = 6
+  end
   return {
-    [0] = vector3[floor][0] + frac * (vector3[floor + 1][0] - vector3[floor][0]),
-    [1] = vector3[floor][1] + frac * (vector3[floor + 1][1] - vector3[floor][1]),
-    [2] = vector3[floor][2] + frac * (vector3[floor + 1][2] - vector3[floor][2]),
+    [0] = vector3[a][0] + frac * (vector3[b][0] - vector3[a][0]),
+    [1] = vector3[a][1] + frac * (vector3[b][1] - vector3[a][1]),
+    [2] = vector3[a][2] + frac * (vector3[b][2] - vector3[a][2]),
   }
 end
 
@@ -104,6 +122,8 @@ function ecsc_on_frame()
   elseif ecsc.preset == nil then
     ecsc_get_preset()
     logMsg("get preset")
+    return
+  elseif os.clock() < ecsc.START_TIME + 10.0 then
     return
   elseif ecsc.layers == nil then
     ecsc_initialize_layers()
@@ -123,13 +143,15 @@ function ecsc_on_frame()
   for i=0,2 do
     if ecsc.layers[i].target == 0 then
       ecsc.layers[i].current = 0.0
+    elseif ecsc.layers[i].target > 1 and ecsc.layers[i].current < 1 then
+      ecsc.layers[i].current = 1.0
     elseif ecsc.layers[i].current < ecsc.layers[i].target - 0.01 then
       ecsc.layers[i].current = ecsc.layers[i].current + 1.0 * dt / ecsc.TRANSITION_TIME
     elseif ecsc.layers[i].current > ecsc.layers[i].target + 0.01 then
       ecsc.layers[i].current = ecsc.layers[i].current - 1.0 * dt / ecsc.TRANSITION_TIME
     end
   end
-  logMsg("{" .. tostring(ecsc.layers[0].current) .. ", " .. tostring(ecsc.layers[1].current) .. ", " .. tostring(ecsc.layers[2].current) .. "}")
+  -- logMsg("{" .. tostring(ecsc.layers[0].current) .. ", " .. tostring(ecsc.layers[1].current) .. ", " .. tostring(ecsc.layers[2].current) .. "}")
   -- Update 'current' value for coverage types(!)
   -- Take mean when shared between multiple layers
   local cov_current = {}
