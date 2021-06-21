@@ -1,5 +1,6 @@
 local ecsc = {
   START_TIME = os.clock(),
+  STARTUP_FRAMES = 0,
   TRANSITION_TIME = 300.0,  -- Transition time in seconds between successive coverage values (0-6)
   COVERAGE_NAMES = {
     [0] = "clear",
@@ -112,7 +113,11 @@ end
 
 function ecsc_on_frame()
   -- Late initialization
-  if os.clock() < ecsc.START_TIME + 1.0 then
+  -- if os.clock() < ecsc.START_TIME + 1.0 then
+  --   return
+  -- end
+  if ecsc.STARTUP_FRAMES < 300 then
+    ecsc.STARTUP_FRAMES = ecsc.STARTUP_FRAMES + 1
     return
   end
   if ecsc.datarefs == nil then
@@ -123,7 +128,7 @@ function ecsc_on_frame()
     ecsc_get_preset()
     logMsg("get preset")
     return
-  elseif os.clock() < ecsc.START_TIME + 10.0 then
+  elseif os.clock() < ecsc.START_TIME + 30.0 then
     return
   elseif ecsc.layers == nil then
     ecsc_initialize_layers()
