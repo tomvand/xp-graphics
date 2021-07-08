@@ -1,0 +1,5 @@
+Cloud maps:
+red channel: 	coverage, max(red channel, layer coverage). Locally increases coverage. Coverage can never be lower than the red channel!!
+green channel: 	cloud map, shape/height. Is set to 1.0 for cirrus. Clouds always have a minimum thickness, so cannot cancel red channel.
+
+Base noise: carves individual clouds and quickly causes tiling! Adjust through base noise ratio?
