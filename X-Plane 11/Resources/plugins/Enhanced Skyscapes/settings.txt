@@ -1,0 +1,12 @@
+clouds/draw=1
+
+clouds/resolution_ratio=0.3
+clouds/skip_fragments=1
+clouds/maximum_drawing_distance=325000.0
+
+clouds/cloud_map_scale=0.00001
+clouds/base_noise_scale=0.0000375
+clouds/detail_noise_scale=0.0005
+
+clouds/sun_gain=0.15
+clouds/ambient_gain=0.25
