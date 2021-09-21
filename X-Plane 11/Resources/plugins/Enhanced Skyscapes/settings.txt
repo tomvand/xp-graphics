@@ -8,5 +8,5 @@ clouds/cloud_map_scale=0.00001
 clouds/base_noise_scale=0.0000375
 clouds/detail_noise_scale=0.0005
 
-clouds/sun_gain=0.09
-clouds/ambient_gain=0.32
+clouds/sun_gain=0.23
+clouds/ambient_gain=0.9
