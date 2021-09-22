@@ -13,24 +13,24 @@ local cpu_unload_step = 0
 local function apply_gpu_unload()
   if gpu_unload_step == 0 then
     -- Clouds
-    set("enhanced_cloudscapes/rendering_resolution_ratio", 0.41)
-    set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
+    -- set("enhanced_cloudscapes/rendering_resolution_ratio", 0.41)
+    -- set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
   elseif gpu_unload_step == 1 then
     -- Clouds
-    set("enhanced_cloudscapes/rendering_resolution_ratio", 0.36)
-    set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
+    -- set("enhanced_cloudscapes/rendering_resolution_ratio", 0.36)
+    -- set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
   elseif gpu_unload_step == 2 then
     -- Clouds
-    set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
-    set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
+    -- set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
+    -- set("enhanced_cloudscapes/maximum_sample_step_size", 60.0)
   elseif gpu_unload_step == 3 then
     -- Clouds
-    set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
-    set("enhanced_cloudscapes/maximum_sample_step_size", 70.0)
+    -- set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
+    -- set("enhanced_cloudscapes/maximum_sample_step_size", 70.0)
   elseif gpu_unload_step == 4 then
     -- Clouds
-    set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
-    set("enhanced_cloudscapes/maximum_sample_step_size", 80.0)
+    -- set("enhanced_cloudscapes/rendering_resolution_ratio", 0.31)
+    -- set("enhanced_cloudscapes/maximum_sample_step_size", 80.0)
   elseif gpu_unload_step > 4 then
     gpu_unload_step = 4
   else

@@ -1,6 +1,6 @@
 clouds/draw=1
 
-clouds/resolution_ratio=0.3
+clouds/resolution_ratio=0.5
 clouds/skip_fragments=1
 clouds/maximum_drawing_distance=325000.0
 
